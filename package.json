@@ -1,0 +1,11 @@
+{
+  "name": "@brick/extension-sub-agent",
+  "version": "0.1.0",
+  "description": "Spawn child agents for parallel task execution — Brick extension",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "sub-agent",
+  "version": "0.1.0",
+  "description": "Spawn child agents for parallel task execution",
+  "type": "mcp",
+  "mcp": {
+    "command": "node",
+    "args": ["index.js"]
+  },
+  "capabilities": {
+    "tools": ["sub_agent_run"],
+    "commands": [],
+    "hooks": []
+  },
+  "config": {
+    "apiKey": {
+      "type": "string",
+      "description": "OpenAI-compatible API key for the sub-agent LLM. Must be set for the extension to function.",
+      "default": "",
+      "label": "API Key",
+      "required": true
+    },
+    "model": {
+      "type": "string",
+      "description": "LLM model identifier (e.g., gpt-4o, claude-sonnet-4-20250514, gemini-2.5-pro)",
+      "default": "gpt-4o",
+      "label": "Model"
+    },
+    "baseUrl": {
+      "type": "string",
+      "description": "Base URL for the OpenAI-compatible API endpoint",
+      "default": "https://api.openai.com/v1",
+      "label": "API Base URL"
+    },
+    "maxTokens": {
+      "type": "number",
+      "description": "Maximum completion tokens per LLM response",
+      "default": 4096,
+      "label": "Max Tokens"
+    },
+    "maxTurns": {
+      "type": "number",
+      "description": "Default max reasoning turns per sub-agent run (1-10, default: 3). More turns = deeper analysis but more cost.",
+      "default": 3,
+      "label": "Default Max Turns"
+    },
+    "temperature": {
+      "type": "number",
+      "description": "LLM sampling temperature (0.0-2.0)",
+      "default": 0.7,
+      "label": "Temperature"
+    }
+  }
+}
